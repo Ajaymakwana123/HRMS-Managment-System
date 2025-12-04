@@ -4,8 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 
-
-
 const Register = () => {
     const [form, setForm] = useState({
         firstName: "",
@@ -18,7 +16,7 @@ const Register = () => {
         terms: false,
     });
     const navigate = useNavigate();
-    
+
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setForm({ ...form, [name]: type === "checkbox" ? checked : value });
@@ -77,7 +75,7 @@ const Register = () => {
                 </div>
 
                 {/* ---------- RIGHT SECTION ---------- */}
-                <div className="w-[65%] flex flex-col text-white p-8">
+                <div className="w-[65%] pl-8 flex flex-col text-white p-8">
                     <h1 className="mt-10 text-[#253D90] font-extrabold text-4xl">
                         Welcome to <br /> XCELTECH
                     </h1>
@@ -154,12 +152,12 @@ const Register = () => {
                     </div>
 
                     {/* Checkboxes */}
-                    <label className="font-semibold mt-6 flex items-center">
+                    <label className="font-medium mt-6 flex items-center">
                         <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange} />
                         <span className="ml-2 text-[#969696]">Yes, I want to receive KRIS newsletters</span>
                     </label>
 
-                    <label className="font-semibold mt-1 flex items-center">
+                    <label className="font-medium mt-1 flex items-center">
                         <input name="terms" type="checkbox" checked={form.terms} onChange={handleChange} />
                         <span className="ml-2 text-[#969696]">
                             I agree to all the <span className="text-[#253D90] font-bold">Terms, Privacy Policy</span>
@@ -171,7 +169,9 @@ const Register = () => {
                         className="mt-4 bg-[#253D90] rounded-[0.5vw] text-white pl-6 pr-6 p-2 font-semibold w-fit">
                         Create Account
                     </button>
-                    <h1 className='mt-4 text-black'>Already have an account? <span className='text-[#253D90] font-bold'> Log In</span></h1>
+                    <h1 onClick={() => {
+                        navigate("/logins");
+                    }} className='mt-4 text-black'>Already have an account? <span className='text-[#253D90] font-bold'> Log In</span></h1>
                 </div>
             </div>
         </div>
