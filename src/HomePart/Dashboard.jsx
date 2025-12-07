@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { HiDotsVertical } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
+import NavPart from "./NavPart";
 
 
 const Dashboard = () => {
@@ -42,6 +44,7 @@ const Dashboard = () => {
     ];
 
     const [user, setUser] = useState(null);
+    const navigator = useNavigate();
 
     useEffect(() => {
         const savedUser = JSON.parse(localStorage.getItem("userData"));
@@ -50,21 +53,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div className='items-center mt-8 flex flex-row justify-between pe-10 bg-white'>
-                <div className='ml-50 font-medium flex gap-6 cursor-pointer'>
-                    <a className='border-b-3 border-md border-[#FFC20E]' href="#">Dashboard</a>
-                    <a href="#">Requests</a>
-                    <a href="#">Payroll</a>
-                    <a href="#">Company</a>
-                    <a href="#">Extras</a>
-                </div>
-
-                <div className='flex gap-4 items-center'>
-                    <img className='h-12' src="./notifi.png" alt="" />
-                    <img className='h-12' src="./msg.png" alt="" />
-                    <img className='h-12 p-1' src="./profile.png" alt="" />
-                </div>
-            </div>
+            <NavPart />
             <div className='bg-[#E3EDF9] relative'>
                 <h1 className='ml-10 pt-3 text-[#253D90]'>Dashboard</h1>
                 <div className='mt-3 bg-[#253D90] rounded-xl ml-5 mr-5 flex relative'>
@@ -73,19 +62,20 @@ const Dashboard = () => {
                         <h1 className='text-xl'>{user ? `${user.firstName} ${user.lastName}` : "User"}</h1>
                         <h1 className='text-md'>UI / UX Designer & UX Writer</h1>
                     </div>
-                    <button className='text-shadow-md right-30 top-14 absolute h-fit p-[.45vw] rounded-md bg-[#FFC20E] pl-6 pr-6'>Edit Profile</button>
+                    <button
+                        onClick={() => navigator("/updateprofile")}
+                        className='cursor-pointer text-shadow-md right-30 top-14 absolute h-fit p-[.45vw] rounded-md bg-[#FFC20E] pl-6 pr-6'>Edit Profile</button>
                     <img className='mt-2 h-28 right-0 absolute' src="./imgleft.png" alt="" />
                 </div>
                 <h1 className='text-black ml-8 mt-5 font-semibold'>Quick Actions</h1>
                 <div className='flex flex-row mt-5 ml-20 mr-20 pb-5 justify-between'>
-                    <h1 className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>Apply for Leave</h1>
+                    <h1 onClick={() => navigator("/applyforleave")} className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>Apply for Leave</h1>
                     <h1 className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>KPI Goals</h1>
                     <h1 className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>Take Appraisal</h1>
                     <h1 className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>View Payslip</h1>
                     <h1 className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>Update Profile</h1>
                     <h1 className='shadow-md pl-8 pr-8 p-2 bg-white rounded-4xl'>Events</h1>
                 </div>
-
 
                 <div className='flex flex-row w-full'>
 
