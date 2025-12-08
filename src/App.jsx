@@ -6,6 +6,8 @@ import Dashboard from './HomePart/Dashboard';
 import Applyforleave from './HomePart/Applyforleave';
 import AnnualLeave from './leavespage/AnnualLeave';
 import UpdateProfile from './HomePart/UpdateProfile';
+import AdminLogin from './loginpart/AdminLogin';
+import AdminDashboard from './HomePart/AdminDashboard';
 
 
 function App() {
@@ -13,9 +15,11 @@ function App() {
     <div
       className='font-[poppins]'>
       <Routes>
-        <Route path="/" element={<Register />} />
+        <Route path="/" element={<AdminLogin />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/logins" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/applyforleave" element={<Applyforleave />} />
         <Route path="/leave" element={<AnnualLeave />} />
         <Route path="/updateprofile" element={<UpdateProfile />} />
