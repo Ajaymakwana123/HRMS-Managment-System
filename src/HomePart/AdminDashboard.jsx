@@ -1,51 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { FaPowerOff } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5"
-import { PiCaretUpDownFill } from "react-icons/pi";
-
-import NavPart from "./NavPart";
+import { FaDownload } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 const AdminDashboard = () => {
 
-    const birthdays = [
-        { name: "biruk kidan’s Day – April", date: "25th" },
-        { name: "biruk kidan’s Day – April", date: "25th" },
-        { name: "biruk kidan’s Day – April", date: "25th" },
-        { name: "biruk kidan’s Day – April", date: "25th" },
-        { name: "biruk kidan’s Day – April", date: "25th" },
+    const appliedJobs = [
+        { title: "Sales Executive", company: "Access Bank", time: "20mins ago", logo: "./access.png" },
+        { title: "User Experience Designer", company: "Paystack", time: "10mins ago", logo: "./paystack.png" },
+        { title: "Product Manager", company: "T-Pay", time: "5mins ago", logo: "./tpay.png" },
     ];
 
-    const [sent, setSent] = useState(() => {
-        const stored = localStorage.getItem("sentWishes");
-        return stored ? JSON.parse(stored) : Array(birthdays.length).fill(false);
-    });
-
-    const handleSend = (index) => {
-        const updated = [...sent];
-        updated[index] = true;
-        setSent(updated);
-        localStorage.setItem("sentWishes", JSON.stringify(updated));
-    };
-
-
-    const leaves = [
-        { title: "Annual", used: 10, total: 60 },
-        { title: "Sick Leave", used: 0, total: 10 },
-        { title: "Compassionate", used: 8, total: 15 }
+    const candidates = [
+        { name: "Even Tesfaye", role: "Applied for : backend Engineer", pic: "./user1.png" },
+        { name: "Yanet mekurya", role: "Applied for : Sales", pic: "./user2.png" },
+        { name: "Aman beyene", role: "Applied for : Product Manager", pic: "./user3.png" },
     ];
 
-    const todos = [
-        "Complete Onboarding Document Upload",
-        "Follow up on clients on documents",
-        "Design wireframes for LMS",
-        "Create case study for next IT project",
-        "Follow up on clients on documents",
+    const joyss = [
+        { name: "Aman", role: "Product Manager", pic: "./user1.png" },
+        { name: "Gelila", role: "Sales Executive", pic: "./user2.png" },
+        { name: "Biruk", role: "UI UX Designer", pic: "./user3.png" }
+    ];
+
+    const payrolls = [
+        { name: "Aman", salary: "30,000 Birr", pic: "./user1.png", status: "Paid" },
+        { name: "Gelila", salary: "50,000 Birr", pic: "./user2.png", status: "Processing" },
+        { name: "Biruk", salary: "40,000 Birr", pic: "./user3.png", status: "Processing" },
     ];
 
     const [user, setUser] = useState(null);
-    const navigator = useNavigate();
 
     useEffect(() => {
         const savedUser = JSON.parse(localStorage.getItem("userData"));
@@ -57,7 +43,7 @@ const AdminDashboard = () => {
 
             {/* LEFt */}
             <div className=" bg-[#121C3E]">
-                <div className="px-6 p-4 text-white">
+                <div className="p-4 text-white">
                     <img className="w-30" src="./logo.png" alt="" />
 
                     <div className='mt-1 flex'>
@@ -120,7 +106,7 @@ const AdminDashboard = () => {
                     </div>
                 </div>
 
-                <button className="flex items-center gap-2 w-fit m-3 bg-[#FF0000] shadow-md text-white px-30 py-2 rounded-xl"><FaPowerOff />                    Log Out</button>
+                <button className="flex items-center gap-1 w-fit mx-3 mb-2 bg-[#FF0000] shadow-md text-white px-22 py-2 rounded-xl"><FaPowerOff />                    Log Out</button>
                 <img className="mt-1 w-full" src="./assets/dash10.png" alt="" />
             </div>
 
@@ -132,7 +118,7 @@ const AdminDashboard = () => {
 
                     <div className="bg-white rounded-2xl flex items-center">
                         <div className="flex items-center gap-2 bg-[#1f3a93] text-white font-semibold px-5 py-3 rounded-l-2xl cursor-pointer">
-                            {"selected"}
+                            {"Selected"}
                             <span>▾</span>
                         </div>
                         <input
@@ -149,8 +135,135 @@ const AdminDashboard = () => {
                         <img className='h-12' src="./msg.png" alt="" />
                     </div>
                 </div>
+
+                <h1 className="text-black font-bold ml-6 mt-6">Dashboard</h1>
+                <div className="flex mt-4 whitespace-nowrap overflow-x-hidden">
+                    <div className="min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#FFC20E]">
+                        <img className="w-12 rotate-[-3deg] filter: brightness-0" src="./assets/dash2.png" alt="" />
+                        <div className="ml-5 flex flex-col items-center">
+                            <h1 className="-mb-1 font-extrabold text-xl">4</h1>
+                            <h1 className="font-bold text-md">Messages</h1>
+                        </div>
+                    </div>
+
+                    <div className="min-w-44 text-white shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#253D90]">
+                        <img className="w-12 rotate-[-3deg]" src="./assets/dash3.png" alt="" />
+                        <div className="ml-5 flex flex-col items-center">
+                            <h1 className="-mb-1 font-extrabold text-xl">1</h1>
+                            <h1 className="font-bold text-md">Jobs</h1>
+                        </div>
+                    </div>
+
+                    <div className="text-white min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#3F861E]">
+                        <img className="w-12 rotate-[-2deg]" src="./assets/dash4.png" alt="" />
+                        <div className="ml-5 flex flex-col items-center">
+                            <h1 className="-mb-1 font-extrabold text-xl">30</h1>
+                            <h1 className="font-bold text-md">Candidates</h1>
+                        </div>
+                    </div>
+
+                    <div className="text-white min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#232423]">
+                        <img className="w-8 rotate-[-3deg]" src="./assets/dash5.png" alt="" />
+                        <div className="ml-5 flex flex-col items-center">
+                            <h1 className="-mb-1 font-extrabold text-xl">2</h1>
+                            <h1 className="font-bold text-md">Resumes</h1>
+                        </div>
+                    </div>
+
+                    <div className="min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#FFC20E]">
+                        <img className="w-12 rotate-[-3deg] filter: brightness-0" src="./assets/dash6.png" alt="" />
+                        <div className="ml-5 flex flex-col items-center">
+                            <h1 className="-mb-1 font-extrabold text-xl">20</h1>
+                            <h1 className="font-bold text-md">Employees</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-1 mt-3 items-center w-full">
+                    {/* Applied Jobs */}
+                    <Card title="Applied Jobs">
+                        {appliedJobs.map((job, i) => (
+                            <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
+                                <div className="flex items-center gap-3">
+                                    <img src={job.logo} className="w-10 h-10" />
+                                    <div>
+                                        <p className="font-semibold">{job.title}</p>
+                                        <p className="text-sm text-gray-600">{job.company}</p>
+                                    </div>
+                                </div>
+                                <span className="text-sm text-gray-500">{job.time}</span>
+                            </div>
+                        ))}
+                    </Card>
+
+                    {/* Employees */}
+                    <Card title="Employees">
+                        {joyss.map((emp, i) => (
+                            <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
+                                <div className="flex items-center gap-3">
+                                    <img src={emp.pic} className="w-10 h-10" />
+                                    <div>
+                                        <p className="font-semibold">{emp.name}</p>
+                                        <p className="text-sm text-gray-600">Role : {emp.role}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-2">
+                                    <button className="bg-green-600 text-white text-sm p-2 rounded-md flex items-center gap-1"><FaEye />View</button>
+                                    <button className="bg-blue-700 text-white text-sm p-2 rounded-md flex items-center gap-1"><FaDownload />Download</button>
+                                </div>
+                            </div>
+                        ))}
+                    </Card>
+
+                    {/* Candidates */}
+                    <Card title="Candidates">
+                        {candidates.map((c, i) => (
+                            <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
+                                <div className="flex items-center gap-3">
+                                    <img src={c.pic} className="w-10 h-10" />
+                                    <div>
+                                        <p className="font-semibold">{c.name}</p>
+                                        <p className="text-sm text-gray-600">{c.role}</p>
+                                    </div>
+                                </div>
+                                <button className="bg-green-600 text-white p-2 rounded-md flex items-center gap-1"><FaEye />View</button>
+                            </div>
+                        ))}
+                    </Card>
+
+                    {/* Payrolls */}
+                    <Card title="April Payrolls">
+                        {payrolls.map((p, i) => (
+                            <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg mb-3">
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center gap-3">
+                                        <img src={p.pic} className="w-10 h-10" />
+                                        <div>
+                                            <p className="font-semibold">{p.name}</p>
+                                            <p className="text-sm text-gray-600">Salary Amount : {p.salary}</p>
+                                        </div>
+                                    </div>
+                                    <span className={`px-4 text-white rounded-md p-2 text-sm 
+                ${p.status === "Paid" ? "bg-green-700" : "bg-yellow-600"}`}>
+                                        {p.status}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </Card>
+                </div>
             </div>
         </div>
     )
 }
+
+const Card = ({ title, children }) => (
+    <div className="bg-white p-4 m-2 rounded-xl shadow-sm border-[#DDEAFF] border">
+        <div className="flex justify-between mb-5">
+            <h3 className="font-bold text-[17px]">{title}</h3>
+            <span className="font-bold">⋮</span>
+        </div>
+        {children}
+    </div>
+);
 export default AdminDashboard
