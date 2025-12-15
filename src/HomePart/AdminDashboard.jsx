@@ -7,6 +7,8 @@ import { FaEye } from "react-icons/fa";
 
 const AdminDashboard = () => {
 
+    const [showSidebar, setShowSidebar] = useState(true);
+
     const appliedJobs = [
         { title: "Sales Executive", company: "Access Bank", time: "20mins ago", logo: "./access.png" },
         { title: "User Experience Designer", company: "Paystack", time: "10mins ago", logo: "./paystack.png" },
@@ -42,7 +44,8 @@ const AdminDashboard = () => {
         <div className="flex justify-between h-full w-full">
 
             {/* LEFt */}
-            <div className=" bg-[#121C3E]">
+            <div className={`bg-[#121C3E] transition-all duration-300 
+    ${showSidebar ? "w-64 opacity-100" : "w-0 opacity-0 overflow-hidden"}`}>
                 <div className="p-4 text-white">
                     <img className="w-30" src="./logo.png" alt="" />
 
@@ -114,7 +117,11 @@ const AdminDashboard = () => {
             <div className="w-full bg-[#E3EDF9]">
 
                 <div className="flex justify-between px-3 items-center pt-3">
-                    <RiMenu2Line className="left-5 h-8 w-fit" />
+                    <RiMenu2Line
+                        onClick={() => setShowSidebar(!showSidebar)}
+                        className="left-5 h-8 w-fit cursor-pointer"
+                    />
+
 
                     <div className="bg-white rounded-2xl flex items-center">
                         <div className="flex items-center gap-2 bg-[#1f3a93] text-white font-semibold px-5 py-3 rounded-l-2xl cursor-pointer">
