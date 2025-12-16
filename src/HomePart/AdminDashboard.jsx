@@ -41,12 +41,14 @@ const AdminDashboard = () => {
     }, []);
 
     return (
-        <div className="flex justify-between h-full w-full">
+        <div className="flex h-screen w-full overflow-hidden">
 
             {/* LEFt */}
-            <div className={`bg-[#121C3E] transition-all duration-300 
-    ${showSidebar ? "w-64 opacity-100" : "w-0 opacity-0 overflow-hidden"}`}>
-                <div className="p-4 text-white">
+            <div
+                className={`fixed lg:relative z-40 bg-[#121C3E] h-full transition-all duration-300
+    ${showSidebar ? "w-64 translate-x-0" : "w-64 -translate-x-full"} lg:translate-x-0`}            >
+
+                <div className="p-4 text-white overflow-y-auto h-full">
                     <img className="w-30" src="./logo.png" alt="" />
 
                     <div className='mt-1 flex'>
@@ -114,16 +116,15 @@ const AdminDashboard = () => {
             </div>
 
             {/* RIGHT */}
-            <div className="w-full bg-[#E3EDF9]">
+            <div className="flex-1 bg-[#E3EDF9] overflow-y-auto">
 
-                <div className="flex justify-between px-3 items-center pt-3">
+                <div className="flex flex-wrap md:flex-nowrap justify-between gap-3 px-3 items-center pt-3">
                     <RiMenu2Line
                         onClick={() => setShowSidebar(!showSidebar)}
                         className="left-5 h-8 w-fit cursor-pointer"
                     />
 
-
-                    <div className="bg-white rounded-2xl flex items-center">
+                    <div className="w-full md:w-[45%] bg-white rounded-2xl flex items-center">
                         <div className="flex items-center gap-2 bg-[#1f3a93] text-white font-semibold px-5 py-3 rounded-l-2xl cursor-pointer">
                             {"Selected"}
                             <span>▾</span>
@@ -131,8 +132,7 @@ const AdminDashboard = () => {
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="flex-1 h-full bg-white outline-none px-5 text-gray-500 text-lg"
-                        />
+                            className="flex-1 bg-white outline-none px-4 py-2 text-gray-500 text-sm" />
                         <IoSearch className="text-gray-400 text-2xl mr-4 cursor-pointer" />
                     </div>
 
@@ -144,32 +144,32 @@ const AdminDashboard = () => {
                 </div>
 
                 <h1 className="text-black font-bold ml-6 mt-6">Dashboard</h1>
-                <div className="flex mt-4 whitespace-nowrap overflow-x-hidden">
-                    <div className="min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#FFC20E]">
-                        <img className="w-12 rotate-[-3deg] filter: brightness-0" src="./assets/dash2.png" alt="" />
-                        <div className="ml-5 flex flex-col items-center">
+                <div className="flex mt-4 gap-3 overflow-x-auto px-3">
+                    <div className="min-w-42 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#FFC20E]">
+                        <img className="w-10 rotate-[-1deg] filter: brightness-0" src="./assets/dash2.png" alt="" />
+                        <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">4</h1>
                             <h1 className="font-bold text-md">Messages</h1>
                         </div>
                     </div>
 
-                    <div className="min-w-44 text-white shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#253D90]">
-                        <img className="w-12 rotate-[-3deg]" src="./assets/dash3.png" alt="" />
-                        <div className="ml-5 flex flex-col items-center">
+                    <div className="min-w-42 text-white shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#253D90]">
+                        <img className="w-10 rotate-[-1deg]" src="./assets/dash3.png" alt="" />
+                        <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">1</h1>
                             <h1 className="font-bold text-md">Jobs</h1>
                         </div>
                     </div>
 
-                    <div className="text-white min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#3F861E]">
-                        <img className="w-12 rotate-[-2deg]" src="./assets/dash4.png" alt="" />
-                        <div className="ml-5 flex flex-col items-center">
+                    <div className="text-white min-w-42 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#3F861E]">
+                        <img className="w-10 rotate-[-1deg]" src="./assets/dash4.png" alt="" />
+                        <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">30</h1>
                             <h1 className="font-bold text-md">Candidates</h1>
                         </div>
                     </div>
 
-                    <div className="text-white min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#232423]">
+                    <div className="text-white min-w-42 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#232423]">
                         <img className="w-8 rotate-[-3deg]" src="./assets/dash5.png" alt="" />
                         <div className="ml-5 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">2</h1>
@@ -177,50 +177,52 @@ const AdminDashboard = () => {
                         </div>
                     </div>
 
-                    <div className="min-w-44 shadow-sm rounded-xl mx-2 items-center flex px-4 py-4 bg-[#FFC20E]">
-                        <img className="w-12 rotate-[-3deg] filter: brightness-0" src="./assets/dash6.png" alt="" />
-                        <div className="ml-5 flex flex-col items-center">
+                    <div className="min-w-44 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#FFC20E]">
+                        <img className="w-10 rotate-[-1deg] filter: brightness-0" src="./assets/dash6.png" alt="" />
+                        <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">20</h1>
                             <h1 className="font-bold text-md">Employees</h1>
                         </div>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-1 mt-3 items-center w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 px-2">
                     {/* Applied Jobs */}
-                    <Card title="Applied Jobs">
-                        {appliedJobs.map((job, i) => (
-                            <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
-                                <div className="flex items-center gap-3">
-                                    <img src={job.logo} className="w-10 h-10" />
-                                    <div>
-                                        <p className="font-semibold">{job.title}</p>
-                                        <p className="text-sm text-gray-600">{job.company}</p>
+                    <div className="md:flex md:flex-col">
+                        <Card title="Applied Jobs">
+                            {appliedJobs.map((job, i) => (
+                                <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
+                                    <div className="flex items-center gap-3">
+                                        <img src={job.logo} className="w-10 h-10" />
+                                        <div>
+                                            <p className="font-semibold">{job.title}</p>
+                                            <p className="text-sm text-gray-600">{job.company}</p>
+                                        </div>
                                     </div>
+                                    <span className="text-sm text-gray-500">{job.time}</span>
                                 </div>
-                                <span className="text-sm text-gray-500">{job.time}</span>
-                            </div>
-                        ))}
-                    </Card>
+                            ))}
+                        </Card>
 
-                    {/* Employees */}
-                    <Card title="Employees">
-                        {joyss.map((emp, i) => (
-                            <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
-                                <div className="flex items-center gap-3">
-                                    <img src={emp.pic} className="w-10 h-10" />
-                                    <div>
-                                        <p className="font-semibold">{emp.name}</p>
-                                        <p className="text-sm text-gray-600">Role : {emp.role}</p>
+                        {/* Employees */}
+                        <Card title="Employees">
+                            {joyss.map((emp, i) => (
+                                <div key={i} className="bg-[#E3EDF9] p-3 rounded-lg flex justify-between items-center mb-3">
+                                    <div className="flex items-center gap-3">
+                                        <img src={emp.pic} className="w-10 h-10" />
+                                        <div>
+                                            <p className="font-semibold">{emp.name}</p>
+                                            <p className="text-sm text-gray-600">Role : {emp.role}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <button className="bg-green-600 text-white text-sm p-2 rounded-md flex items-center gap-1"><FaEye />View</button>
+                                        <button className="bg-blue-700 text-white text-sm p-2 rounded-md flex items-center gap-1"><FaDownload />Download</button>
                                     </div>
                                 </div>
-                                <div className="flex gap-2">
-                                    <button className="bg-green-600 text-white text-sm p-2 rounded-md flex items-center gap-1"><FaEye />View</button>
-                                    <button className="bg-blue-700 text-white text-sm p-2 rounded-md flex items-center gap-1"><FaDownload />Download</button>
-                                </div>
-                            </div>
-                        ))}
-                    </Card>
+                            ))}
+                        </Card>
+                    </div>
 
                     {/* Candidates */}
                     <Card title="Candidates">
@@ -265,10 +267,10 @@ const AdminDashboard = () => {
 }
 
 const Card = ({ title, children }) => (
-    <div className="bg-white p-4 m-2 rounded-xl shadow-sm border-[#DDEAFF] border">
-        <div className="flex justify-between mb-5">
-            <h3 className="font-bold text-[17px]">{title}</h3>
-            <span className="font-bold">⋮</span>
+    <div className="bg-white p-4 rounded-xl shadow-sm border border-[#DDEAFF] w-full">
+        <div className="flex justify-between mb-4">
+            <h3 className="font-bold text-[16px]">{title}</h3>
+            <span className="font-bold cursor-pointer">⋮</span>
         </div>
         {children}
     </div>

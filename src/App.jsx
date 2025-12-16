@@ -15,8 +15,8 @@ function App() {
     <div
       className='font-[poppins]'>
       <Routes>
-        <Route path="/" element={<AdminLogin />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Register />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/logins" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />

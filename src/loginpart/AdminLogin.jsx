@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function AdminLogin() {
     const [form, setForm] = useState({
@@ -16,32 +19,32 @@ function AdminLogin() {
     };
 
     const handleSubmit = () => {
+        if (!form.email.trim()) {
+            toast.error("Email is required");
+            return;
+        }
+
+        if (!form.pass1.trim()) {
+            toast.error("Password is required");
+            return;
+        }
+
         setTimeout(() => {
             navigate("/admindashboard");
-        }, 800);
+        }, 200);
     };
 
     return (
         <div className="w-full min-h-screen bg-[url(./adminbg.png)] bg-cover bg-center relative">
 
-            {/* Logo */}
             <div className="absolute top-5 left-5 sm:left-10">
                 <img src="./logo.png" alt="Logo" className="w-32 sm:w-40" />
             </div>
 
-            {/* Login Card */}
             <div className="flex items-center justify-center min-h-screen px-4">
                 <div className="
-                    w-full 
-                    sm:w-[80%] 
-                    md:w-[60%] 
-                    lg:w-[40%] 
-                    xl:w-[35%]
-                    bg-black/40
-                    backdrop-blur-md
-                    rounded-lg
-                    p-6 sm:p-8
-                    text-white
+                    w-full sm:w-[80%] md:w-[60%] lg:w-[40%] xl:w-[35%]
+                    bg-black/40 backdrop-blur-md rounded-xl p-6 sm:p-8 text-white
                 ">
                     <h1 className="text-center text-3xl sm:text-4xl font-extrabold">
                         Login

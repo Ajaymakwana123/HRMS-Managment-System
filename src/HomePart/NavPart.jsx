@@ -1,25 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function NavPart() {
+    const [open, setOpen] = useState(false);
+
     return (
-        <div>
-            <div className='items-center flex flex-row justify-between p-3 pe-10 bg-white'>
-                <div className='ml-50 font-medium flex gap-6 cursor-pointer'>
-                    <a className='border-b-3 border-md border-[#FFC20E]' href="#">Dashboard</a>
+        <nav className="bg-white shadow-md w-full">
+            <div className="flex items-center justify-between px-4 md:px-8 py-3">
+
+                {/* LOGO / LEFT */}
+                <h1 className="font-bold text-lg text-[#253D90]">
+                    HR Dashboard
+                </h1>
+
+                {/* DESKTOP MENU */}
+                <div className="hidden md:flex gap-6 font-medium">
+                    <a className="border-b-2 border-[#FFC20E]" href="/dashboard">Dashboard</a>
                     <a href="#">Requests</a>
                     <a href="#">Payroll</a>
                     <a href="#">Company</a>
                     <a href="#">Extras</a>
                 </div>
 
-                <div className='flex gap-4 items-center justify-center'>
-                    <img className='h-12' src="./notifi.png" alt="" />
-                    <img className='h-12' src="./msg.png" alt="" />
-                    <img className='h-12 p-1.5' src="./profile.png" alt="" />
+                {/* RIGHT ICONS */}
+                <div className="hidden md:flex gap-4 items-center">
+                    <img className="h-9 cursor-pointer" src="./notifi.png" alt="notification" />
+                    <img className="h-9 cursor-pointer" src="./msg.png" alt="message" />
+                    <img className="h-9 cursor-pointer rounded-full" src="./profile.png" alt="profile" />
+                </div>
+
+                {/* MOBILE MENU ICON */}
+                <div className="md:hidden">
+                    <button onClick={() => setOpen(!open)}>
+                        {open ? <FaTimes size={22} /> : <FaBars size={22} />}
+                    </button>
                 </div>
             </div>
-        </div>
-    )
+
+            {/* MOBILE MENU */}
+            {open && (
+                <div className="md:hidden bg-white border-t">
+                    <div className="flex flex-col gap-4 px-6 py-4 font-medium">
+                        <a className="border-b-2 border-[#FFC20E] w-fit" href="#">Dashboard</a>
+                        <a href="#">Requests</a>
+                        <a href="#">Payroll</a>
+                        <a href="#">Company</a>
+                        <a href="#">Extras</a>
+
+                        <div className="flex gap-4 pt-3 border-t">
+                            <img className="h-8" src="./notifi.png" alt="" />
+                            <img className="h-8" src="./msg.png" alt="" />
+                            <img className="h-8 rounded-full" src="./profile.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
 }
 
-export default NavPart
+export default NavPart;

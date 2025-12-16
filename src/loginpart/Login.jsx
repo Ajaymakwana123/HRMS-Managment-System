@@ -3,8 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
-
-function login() {
+function Login() {
 
     const [form, setForm] = useState({
         email: "",
@@ -41,70 +40,113 @@ function login() {
 
         setTimeout(() => {
             navigate("/dashboard");
-        }, 800);
+        }, 500);
     };
 
     return (
-        <div>
+        <div className="min-h-screen flex flex-col lg:flex-row">
             <ToastContainer />
-            <div className="h-[100vh] flex flex-row justify-center">
-                {/* ---------- LEFT SECTION ---------- */}
-                <div className="w-[35%] pl-8 flex flex-col text-white p-8">
-                    <h1 className="mt-18 text-[#253D90] font-extrabold text-4xl">Login</h1>
-                    <h1 className="mt-2 text-[#969696]">Login to your account.</h1>
-                    {/* Inputs */}
 
-                    <div className="flex flex-col mt-10">
-                        <h4 className="text-[rgb(37,61,144)]">E-mail Address</h4>
+            {/* LEFT – LOGIN*/}
+            <div className="flex-1 flex items-center justify-center p-4">
+                <div className="w-full max-w-md bg-white p-6 md:p-8 rounded-xl">
+
+                    <h1 className="text-[#253D90] font-extrabold text-3xl md:text-4xl">
+                        Login
+                    </h1>
+                    <p className="mt-2 text-[#969696]">
+                        Login to your account.
+                    </p>
+
+                    {/* Email */}
+                    <div className="flex flex-col mt-6">
+                        <label className="text-[#253D90] text-sm font-medium">
+                            E-mail Address
+                        </label>
                         <input
                             name="email"
                             value={form.email}
                             onChange={handleChange}
-                            className="mt-1 mr-14 text-black border-2 p-[0.3vw] rounded-sm border-[#CBB4B4]"
                             type="email"
+                            className="mt-1 border border-[#CBB4B4] rounded-md px-3 py-2 text-black outline-none"
                         />
                     </div>
+
+                    {/* Password */}
                     <div className="flex flex-col mt-4">
-                        <h4 className="text-[#253D90]">Password</h4>
+                        <label className="text-[#253D90] text-sm font-medium">
+                            Password
+                        </label>
                         <input
                             name="pass1"
                             value={form.pass1}
                             onChange={handleChange}
-                            className="mt-1 mr-14 text-black border-2 p-[0.3vw] rounded-sm border-[#CBB4B4]"
                             type="password"
+                            className="mt-1 border border-[#CBB4B4] rounded-md px-3 py-2 text-black outline-none"
                         />
                     </div>
 
-                    {/* Checkboxes */}
-                    <div className='flex flex-row justify-between mt-5 pr-10'>
-                        <label className="font-medium flex items-center">
-                            <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange} />
-                            <span className="ml-2 text-[#969696]">Remember me</span>
+                    {/* Remember / Reset */}
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 gap-3">
+                        <label className="flex items-center text-sm text-gray-600">
+                            <input
+                                type="checkbox"
+                                name="newsletter"
+                                checked={form.newsletter}
+                                onChange={handleChange}
+                            />
+                            <span className="ml-2">Remember me</span>
                         </label>
-                        <h2 className='text-[#253D90] cursor-pointer'>Reset Password?</h2>
+                        <span className="text-sm text-[#253D90] cursor-pointer">
+                            Reset Password?
+                        </span>
                     </div>
+
+                    {/* Button */}
                     <button
                         onClick={handleSubmit}
-                        className="mt-4 mr-14 bg-[#253D90] rounded-[0.5vw] text-white pl-6 pr-6 p-2 font-semibold">
+                        className="w-full mt-6 bg-[#253D90] text-white py-2 rounded-md font-semibold"
+                    >
                         Sign In
                     </button>
-                    <h1 onClick={() => {
-                    }} className='mt-4 text-black'>Don’t have an account yet? <span className='text-[#253D90] font-bold'>Join KRIS today.</span></h1>
-                </div>
 
-                {/* ---------- RIGHT SECTION ---------- */}
-                <div className="text-white w-[65%] h-full flex flex-col bg-[url(./loginbg.png)] justify-end bg-cover">
-                    <h1 className="ml-6 mt-[10vw] text-3xl font-extrabold">
-                        Manage all <span className='text-[#FFC20E]'>HR Operations</span><br /> from the comfort of your <br />home.</h1>
-                    <div className="ml-6 flex flex-row gap-4 mt-14 mb-10">
-                        <div className="border-[#FFC20E] border-5 rounded-4xl w-[4vw]"></div>
-                        <div className="bg-white border-5 rounded-4xl w-[4vw]"></div>
-                        <div className="bg-white border-5 rounded-4xl w-[4vw]"></div>
-                    </div>
+                    {/* Register */}
+                    <p className="mt-4 text-sm text-center text-gray-700">
+                        Don’t have an account yet?
+                        <span
+                            onClick={() => navigate("/register")}
+                            className="text-[#253D90] font-bold cursor-pointer ml-1"
+                        >
+                            Join KRIS today
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            {/* RIGHT */}
+            <div className="
+                hidden lg:flex
+                w-[45%]
+                bg-[url(./loginbg.png)]
+                bg-cover bg-center
+                text-white
+                flex-col
+                justify-end
+                p-10
+            ">
+                <h1 className="text-3xl font-extrabold">
+                    Manage all <span className="text-[#FFC20E]">HR Operations</span><br />
+                    from the comfort of your <br /> home.
+                </h1>
+
+                <div className="flex gap-4 mt-10">
+                    <div className="bg-[#FFC20E] rounded-full w-8 h-2"></div>
+                    <div className="bg-white rounded-full w-8 h-2"></div>
+                    <div className="bg-white rounded-full w-8 h-2"></div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default login
+export default Login;

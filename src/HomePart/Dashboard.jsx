@@ -5,7 +5,6 @@ import { HiDotsVertical } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import NavPart from "./NavPart";
 
-
 const Dashboard = () => {
 
     const birthdays = [
