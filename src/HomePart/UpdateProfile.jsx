@@ -48,42 +48,50 @@ const UpdateProfile = () => {
                 </div>
 
                 <div className='flex ml-5 m-3'>
-                    <div className='p-4 h-fit rounded-sm bg-white'>
+                    <div className='p-4 flex  flex-col gap-4 h-fit rounded-sm bg-white'>
                         <h1 onClick={() => setActiveTab("personal")}
-                            className={`${activeTab === "personal" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "personal" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Personal Details
                         </h1>
 
                         <h1 onClick={() => setActiveTab("contact")}
-                            className={`${activeTab === "contact" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "contact" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Contact Details
                         </h1>
 
                         <h1 onClick={() => setActiveTab("kin")}
-                            className={`${activeTab === "kin" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "kin" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Next of Kin Details
                         </h1>
 
                         <h1 onClick={() => setActiveTab("education")}
-                            className={`${activeTab === "education" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "education" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Education Qualifications
                         </h1>
                         <h1
                             onClick={() => setActiveTab("guarantor")}
-                            className={`${activeTab === "guarantor" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "guarantor" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Guarantor Details</h1>
                         <h1 onClick={() => setActiveTab("family")}
-                            className={`${activeTab === "family" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "family" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Family Details</h1>
                         <h1 onClick={() => setActiveTab("job")}
-                            className={`${activeTab === "job" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "job" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Job Details</h1>
                         <h1 onClick={() => setActiveTab("financial")}
-                            className={`${activeTab === "financial" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} mb-4 rounded-sm p-2.5 px-12 text-center cursor-pointer`}>
+                            className={`
+${activeTab === "financial" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 min-w-[180px] md:w-full text-center cursor-pointer text-sm md:text-base`}>
                             Financial Details</h1>
                     </div>
 
-                    <div className='p-4 w-[73%] h-fit rounded-sm flex flex-col relative ml-5 bg-white'>
+                    <div className='p-4 w-full md:w-[75%] h-fit rounded-sm flex flex-col relative bg-white'>
                         {activeTab === "personal" && (
                             <div>
                                 <div className='absolute right-1/5 top-14'>
@@ -97,7 +105,7 @@ const UpdateProfile = () => {
 
                                     <h1 className='mt-8'>Department</h1>
                                     <h1 className='mt-1 font-bold'>Design & Marketing</h1>
-                                    <div className='flex gap-30 mt-6 mb-15'>
+                                    <div className='flex flex-col md:flex-row gap-10 mt-6 mb-10 text-center md:text-left'>
                                         <div>
                                             <h1 className='mt-4'>Job Title</h1>
                                             <h1 className='mt-1 font-bold'>UI / UX Designer</h1>
@@ -115,7 +123,7 @@ const UpdateProfile = () => {
                             <div>
                                 <div className="bg-white w-[85%] p-4 rounded-md">
                                     {/* Phone numbers */}
-                                    <div className="flex gap-6 mb-5 w-full">
+                                    <div className="flex flex-col md:flex-row gap-6 mb-5 w-full">
                                         <div className="flex flex-col w-1/2">
                                             <label className="text-[15px] font-semibold mb-1">Phone Number 1</label>
                                             <input
@@ -193,7 +201,8 @@ const UpdateProfile = () => {
                         {activeTab === "kin" && (
                             <div className="bg-white w-[85%] p-4 rounded-md">
                                 {/* First row */}
-                                <div className="flex gap-6 mb-5 w-full">
+                                <div className="flex flex-col md:flex-row gap-6 mb-5 w-full">
+
                                     <div className="flex flex-col w-1/2">
                                         <label className="text-[15px] font-semibold mb-1">Next of kin name</label>
                                         <input
@@ -220,7 +229,7 @@ const UpdateProfile = () => {
                                 </div>
 
                                 {/* Second row */}
-                                <div className="flex gap-6 mb-5 w-full">
+                                <div className="flex flex-col md:flex-row gap-6 mb-5 w-full">
                                     <div className="flex flex-col w-1/2">
                                         <label className="text-[15px] font-semibold mb-1">Phone Number</label>
                                         <input
@@ -340,7 +349,6 @@ const UpdateProfile = () => {
                                 <div className="mb-4">
                                     <label className="font-semibold">Full Name</label>
                                     <input
-                                        type="text"
                                         value="Natnael dawit"
                                         className="w-full mt-1 bg-[#E3EDF9] p-3 rounded-md outline-none"
                                     />
@@ -392,7 +400,7 @@ const UpdateProfile = () => {
                                 </div>
 
                                 {/* Department + Line Manager */}
-                                <div className="flex justify-between px-20 mb-10">
+                                <div className="flex flex-col md:flex-row justify-between gap-6 md:px-20 mb-10 text-center">
                                     <div className="text-center">
                                         <h3 className="text-[15px] font-semibold">Department</h3>
                                         <p className="font-bold text-[18px] mt-1">Design & Marketing</p>
@@ -482,7 +490,7 @@ const UpdateProfile = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
