@@ -61,8 +61,8 @@ const Register = () => {
             <ToastContainer />
 
             {/* LEFT SECTION */}
-            <div className="hidden lg:flex w-[40%] bg-[url(./lgbg.png)] bg-cover bg-center text-white flex-col justify-between p-8">
-                <img className="w-36" src="./logo.png" alt="" />
+            <div className="hidden lg:flex w-[40%] bg-[url(/images/lgbg.png)] bg-cover bg-center text-white flex-col justify-between p-8">
+                <img className="w-36" src="/images/logo.png" alt="" />
                 <div>
                     <h1 className="text-3xl font-extrabold">
                         HR Management Platform

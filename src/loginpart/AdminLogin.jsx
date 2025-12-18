@@ -42,10 +42,10 @@ function AdminLogin() {
     };
 
     return (
-        <div className="w-full min-h-screen bg-[url(./adminbg.png)] bg-cover bg-center relative">
+        <div className="w-full min-h-screen bg-[url(/images/adminbg.png)] bg-cover bg-center relative">
             <ToastContainer />
             <div className="absolute top-5 left-5 sm:left-10">
-                <img src="./logo.png" alt="Logo" className="w-32 sm:w-40" />
+                <img src="/images/logo.png" alt="Logo" className="w-32 sm:w-40" />
             </div>
 
             <div className="flex items-center justify-center min-h-screen px-4">

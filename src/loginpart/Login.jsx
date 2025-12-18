@@ -106,7 +106,6 @@ function Login() {
                             Sign In
                         </button>
                     </form>
-
                 </div>
             </div>
 
@@ -114,7 +113,7 @@ function Login() {
 
 
             {/* RIGHT */}
-            <div className="hidden lg:flex w-[45%] bg-[url(./loginbg.png)] bg-cover bg-center text-white flex-col justify-end p-10">
+            <div className="hidden lg:flex w-[45%] bg-[url(/images/loginbg.png)] bg-cover bg-center text-white flex-col justify-end p-10">
                 <h1 className="text-3xl font-extrabold">
                     Manage all <span className="text-[#FFC20E]">HR Operations</span><br />
                     from the comfort of your <br /> home.

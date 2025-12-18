@@ -36,7 +36,7 @@ const Applyforleave = () => {
                 <div className="bg-white rounded-xl shadow p-5 md:p-6">
                     {/* Header */}
                     <div className="flex items-center gap-3 mb-6">
-                        <img className="w-8" src="./bookopen.png" alt="" />
+                        <img className="w-8" src="/images/bookopen.png" alt="" />
                         <h1 className="text-lg md:text-xl font-bold">
                             Leave Application
                         </h1>

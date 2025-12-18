@@ -56,7 +56,7 @@ const Dashboard = () => {
             <div className='bg-[#E3EDF9] relative'>
                 <h1 className='ml-10 pt-3 text-[#253D90]'>Dashboard</h1>
                 <div className='mt-3 bg-[#253D90] rounded-xl ml-5 mr-5 flex relative'>
-                    <img className='ml-4 mt-6 mb-6 h-20 w-20 b-2' src="./profile.png" alt="" />
+                    <img className='ml-4 mt-6 mb-6 h-20 w-20 b-2' src="/images/profile.png" alt="" />
                     <div className='flex flex-col justify-center text-white ml-4'>
                         <h1 className='text-xl'>{user ? `${user.firstName} ${user.lastName}` : "User"}</h1>
                         <h1 className='text-md'>UI / UX Designer & UX Writer</h1>
@@ -64,7 +64,7 @@ const Dashboard = () => {
                     <button
                         onClick={() => navigator("/updateprofile")}
                         className='cursor-pointer text-shadow-md right-30 top-14 absolute h-fit p-[.45vw] rounded-md bg-[#FFC20E] pl-6 pr-6'>Edit Profile</button>
-                    <img className='mt-2 h-28 right-0 absolute' src="./imgleft.png" alt="" />
+                    <img className='mt-2 h-28 right-0 absolute' src="/images/imgleft.png" alt="" />
                 </div>
                 <h1 className='text-black ml-8 mt-5 font-semibold'>Quick Actions</h1>
                 <div className='flex flex-row mt-5 ml-20 mr-20 pb-5 justify-between'>

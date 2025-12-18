@@ -95,11 +95,11 @@ ${activeTab === "financial" ? "bg-[#FFC20E]" : "bg-[#E3EDF9]"} rounded-sm p-2.5 
                         {activeTab === "personal" && (
                             <div>
                                 <div className='absolute right-1/5 top-14'>
-                                    <img className='w-10' src="./edit.png" alt="" />
+                                    <img className='w-10' src="/images/edit.png" alt="" />
                                     <h1 className='mt-0.5 font-semibold'>Edit</h1>
                                 </div>
                                 <div className='flex flex-col items-center h-full justify-center'>
-                                    <img className='w-40' src="./profile.png" alt="" />
+                                    <img className='w-40' src="/images/profile.png" alt="" />
                                     <h1 className='mt-8'>Employee Name</h1>
                                     <h1 className='mt-1 font-bold'>Name</h1>
 

@@ -49,10 +49,10 @@ const AdminDashboard = () => {
     ${showSidebar ? "w-64 translate-x-0" : "w-64 -translate-x-full"} lg:translate-x-0`}            >
 
                 <div className="p-4 text-white overflow-y-auto h-full">
-                    <img className="w-30" src="./logo.png" alt="" />
+                    <img className="w-30" src="/images/logo.png" alt="" />
 
                     <div className='mt-1 flex'>
-                        <img className='mt-3 mb-6 h-20 w-20 b-2' src="./profile.png" alt="" />
+                        <img className='mt-3 mb-6 h-20 w-20 b-2' src="/images/profile.png" alt="" />
                         <div className='flex flex-col justify-center text-white ml-4'>
                             <h1 className='text-sm mb-1'>{user ? `${user.firstName} ${user.lastName}` : "User"}</h1>
                             <h1 className='text-xl'>Admin</h1>
@@ -62,57 +62,57 @@ const AdminDashboard = () => {
                     <h1 className="ml-5">Features</h1>
 
                     <div className="mt-2 items-center flex pl-4 py-3 bg-[#FFC20E] rounded-xl shadow-md">
-                        <img className="w-8 object-contain" src="./assets/dash1.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash1.png" alt="" />
                         <h1 className="ml-3.5 text-black">Dashboard</h1>
                     </div>
 
                     <div className="items-center mt-1 flex pl-4 py-3 rounded-xl">
-                        <img className="w-8 object-contain" src="./assets/dash2.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash2.png" alt="" />
                         <h1 className="ml-3.5 text-white">Messages</h1>
                     </div>
 
                     <h1 className="mt-5 ml-5">Recruitment</h1>
 
                     <div className="mt-2 flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash3.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash3.png" alt="" />
                         <h1 className="ml-3.5 text-white">Jobs</h1>
                     </div>
 
                     <div className="flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash4.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash4.png" alt="" />
                         <h1 className="ml-3.5 text-white">Candidates</h1>
                     </div>
                     <div className="flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash5.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash5.png" alt="" />
                         <h1 className="ml-3.5 text-white">Resumes</h1>
                     </div>
 
                     <h1 className="mt-5 ml-5">Organization</h1>
 
                     <div className="mt-2 flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash6.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash6.png" alt="" />
                         <h1 className="ml-3.5 text-white">Employee Management</h1>
                     </div>
 
                     <div className="flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash7.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash7.png" alt="" />
                         <h1 className="ml-3.5 text-white">Leave Management</h1>
                     </div>
                     <div className="flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash8.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash8.png" alt="" />
                         <h1 className="ml-3.5 text-white">Performance Management</h1>
                     </div>
 
                     <h1 className="mt-5 ml-5">KRIS Pay</h1>
 
                     <div className="mt-2 flex pl-4 py-3 rounded-xl items-center">
-                        <img className="w-8 object-contain" src="./assets/dash9.png" alt="" />
+                        <img className="w-8 object-contain" src="/images/assets/dash9.png" alt="" />
                         <h1 className="ml-3.5 text-white">Payroll Management</h1>
                     </div>
                 </div>
 
                 <button className="flex items-center gap-1 w-fit mx-3 mb-2 bg-[#FF0000] shadow-md text-white px-22 py-2 rounded-xl"><FaPowerOff />                    Log Out</button>
-                <img className="mt-1 w-full" src="./assets/dash10.png" alt="" />
+                <img className="mt-1 w-full" src="/images/assets/dash10.png" alt="" />
             </div>
 
             {/* RIGHT */}
@@ -137,16 +137,16 @@ const AdminDashboard = () => {
                     </div>
 
                     <div className='flex gap-2 items-center justify-center'>
-                        <img className='h-12' src="./notifi.png" alt="" />
-                        <img className='h-12' src="./icseting.png" alt="" />
-                        <img className='h-12' src="./msg.png" alt="" />
+                        <img className='h-12' src="/images/notifi.png" alt="" />
+                        <img className='h-12' src="/images/icseting.png" alt="" />
+                        <img className='h-12' src="/images/msg.png" alt="" />
                     </div>
                 </div>
 
                 <h1 className="text-black font-bold ml-6 mt-6">Dashboard</h1>
                 <div className="flex mt-4 gap-3 overflow-x-auto px-3">
                     <div className="min-w-42 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#FFC20E]">
-                        <img className="w-10 rotate-[-1deg] filter: brightness-0" src="./assets/dash2.png" alt="" />
+                        <img className="w-10 rotate-[-1deg] filter: brightness-0" src="/images/assets/dash2.png" alt="" />
                         <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">4</h1>
                             <h1 className="font-bold text-md">Messages</h1>
@@ -154,7 +154,7 @@ const AdminDashboard = () => {
                     </div>
 
                     <div className="min-w-42 text-white shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#253D90]">
-                        <img className="w-10 rotate-[-1deg]" src="./assets/dash3.png" alt="" />
+                        <img className="w-10 rotate-[-1deg]" src="/images/assets/dash3.png" alt="" />
                         <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">1</h1>
                             <h1 className="font-bold text-md">Jobs</h1>
@@ -162,7 +162,7 @@ const AdminDashboard = () => {
                     </div>
 
                     <div className="text-white min-w-42 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#3F861E]">
-                        <img className="w-10 rotate-[-1deg]" src="./assets/dash4.png" alt="" />
+                        <img className="w-10 rotate-[-1deg]" src="/images/assets/dash4.png" alt="" />
                         <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">30</h1>
                             <h1 className="font-bold text-md">Candidates</h1>
@@ -170,7 +170,7 @@ const AdminDashboard = () => {
                     </div>
 
                     <div className="text-white min-w-42 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#232423]">
-                        <img className="w-8 rotate-[-3deg]" src="./assets/dash5.png" alt="" />
+                        <img className="w-8 rotate-[-3deg]" src="/images/assets/dash5.png" alt="" />
                         <div className="ml-5 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">2</h1>
                             <h1 className="font-bold text-md">Resumes</h1>
@@ -178,7 +178,7 @@ const AdminDashboard = () => {
                     </div>
 
                     <div className="min-w-44 shadow-sm rounded-xl mx-1.5 items-center flex px-4 py-4 bg-[#FFC20E]">
-                        <img className="w-10 rotate-[-1deg] filter: brightness-0" src="./assets/dash6.png" alt="" />
+                        <img className="w-10 rotate-[-1deg] filter: brightness-0" src="/images/assets/dash6.png" alt="" />
                         <div className="ml-4 flex flex-col items-center">
                             <h1 className="-mb-1 font-extrabold text-xl">20</h1>
                             <h1 className="font-bold text-md">Employees</h1>

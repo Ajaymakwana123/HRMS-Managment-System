@@ -26,7 +26,7 @@ const AnnualLeave = () => {
                 {/* FORM CARD */}
                 <div className="bg-white rounded-xl shadow p-5 md:p-8 max-w-5xl mx-auto">
                     <div className="flex items-center gap-3 justify-center">
-                        <img src="./bookopen.png" className="w-9" alt="" />
+                        <img src="/images/bookopen.png" className="w-9" alt="" />
                         <h1 className="font-bold text-xl md:text-2xl">Leave Application</h1>
                     </div>
 
@@ -135,7 +135,7 @@ const AnnualLeave = () => {
             {openModal && (
                 <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-xl p-8 w-[90%] max-w-sm text-center">
-                        <img src="./thumb.png" className="w-24 mx-auto" alt="" />
+                        <img src="/images/thumb.png" className="w-24 mx-auto" alt="" />
                         <h1 className="text-xl font-bold text-[#0049FF] mt-4">
                             Great Job!
                         </h1>

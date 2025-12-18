@@ -24,9 +24,9 @@ function NavPart() {
 
                 {/* RIGHT ICONS */}
                 <div className="hidden md:flex gap-4 items-center">
-                    <img className="h-9 cursor-pointer" src="./notifi.png" alt="notification" />
-                    <img className="h-9 cursor-pointer" src="./msg.png" alt="message" />
-                    <img className="h-9 cursor-pointer rounded-full" src="./profile.png" alt="profile" />
+                    <img className="h-9 cursor-pointer" src="/images/notifi.png" alt="notification" />
+                    <img className="h-9 cursor-pointer" src="/images/msg.png" alt="message" />
+                    <img className="h-9 cursor-pointer rounded-full" src="/images/profile.png" alt="profile" />
                 </div>
 
                 {/* MOBILE MENU ICON */}
@@ -48,9 +48,9 @@ function NavPart() {
                         <a href="#">Extras</a>
 
                         <div className="flex gap-4 pt-3 border-t">
-                            <img className="h-8" src="./notifi.png" alt="" />
-                            <img className="h-8" src="./msg.png" alt="" />
-                            <img className="h-8 rounded-full" src="./profile.png" alt="" />
+                            <img className="h-8" src="/images/notifi.png" alt="" />
+                            <img className="h-8" src="/images/msg.png" alt="" />
+                            <img className="h-8 rounded-full" src="/images/profile.png" alt="" />
                         </div>
                     </div>
                 </div>
