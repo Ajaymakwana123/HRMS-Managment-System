@@ -22,6 +22,16 @@ const Register = () => {
         setForm({ ...form, [name]: type === "checkbox" ? checked : value });
     };
 
+    const [showRoleDialog, setShowRoleDialog] = useState(false);
+    const handleRoleSelect = (role) => {
+        setShowRoleDialog(false);
+
+        if (role === "admin") {
+            navigate("/adminlogin");
+        } else {
+            navigate("/logins");
+        }
+    };
     const handleSubmit = () => {
         const { email, pass1, pass2, terms } = form;
 
@@ -43,7 +53,7 @@ const Register = () => {
         localStorage.setItem("userData", JSON.stringify(form));
         toast.success("Account created successfully!");
 
-        setTimeout(() => navigate("/logins"), 600);
+        setShowRoleDialog(true);
     };
 
     return (
@@ -64,6 +74,29 @@ const Register = () => {
                 </div>
             </div>
 
+            {showRoleDialog && (
+                <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50">
+                    <div className="bg-white rounded-xl p-6 w-[90%] max-w-sm text-center">
+                        <h2 className="text-xl font-bold text-[#253D90]">Select Role</h2>
+                        <p className="text-gray-600 mt-2">Login as</p>
+
+                        <div className="flex gap-4 mt-6">
+                            <button
+                                onClick={() => handleRoleSelect("admin")}
+                                className="flex-1 bg-[#253D90] text-white py-2 rounded-md font-semibold"
+                            >
+                                Admin
+                            </button>
+                            <button
+                                onClick={() => handleRoleSelect("employee")}
+                                className="flex-1 bg-[#FFC20E] text-black py-2 rounded-md font-semibold"
+                            >
+                                Employee
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
             {/* RIGHT SECTION */}
             <div className="flex-1 flex justify-center items-center p-4">
                 <div className="w-full max-w-2xl bg-white rounded-xl p-6 md:p-8">
